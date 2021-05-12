@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Xadrez.Tabuleiro
 {
-    class Cor
+    enum Cor
     {
+        Branca,
+        Preta,
+        Amarela,
+        Azul,
     }
 }
