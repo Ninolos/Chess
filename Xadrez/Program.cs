@@ -1,6 +1,7 @@
 ﻿using System;
 using Tabuleiro;
 using Xadrez.Tabuleiro;
+using Xadrez.Xadrez;
 
 namespace Xadrez
 {
@@ -10,6 +11,7 @@ namespace Xadrez
         {
             tabuleiro tab = new tabuleiro(8, 8);
 
+            tab.ColocarPeca(new Torre(tab, Cor.Preta) , new Posicao(0, 0));
             Tela.ImprimirTabuleiro(tab);
 
             Console.ReadLine();
