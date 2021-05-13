@@ -15,6 +15,12 @@ namespace Xadrez.Tabuleiro
             Coluna = coluna;
         }
 
+        public void definirvalores(int linha, int coluna)
+        {
+            Linha = linha;
+            Coluna = coluna;
+        }
+
         public Posicao()
         {
 

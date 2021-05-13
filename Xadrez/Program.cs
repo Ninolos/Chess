@@ -9,12 +9,37 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            tabuleiro tab = new tabuleiro(8, 8);
+            try
+            {
+                PartidaXadrez partida = new PartidaXadrez();
 
-            tab.colocarPeca(new Torre(tab, Cor.Preta) , new Posicao(0, 0));
-            Tela.ImprimirTabuleiro(tab);
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab);
 
-            Console.ReadLine();
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+                    partida.executaMovimento(origem, destino);
+
+                }
+
+            }
+            catch
+            {
+
+            }
+
         }
     }
 }
