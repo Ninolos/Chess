@@ -14,18 +14,15 @@ namespace Xadrez.Tabuleiro
             Linha = linha;
             Coluna = coluna;
         }
-
         public void definirvalores(int linha, int coluna)
         {
             Linha = linha;
             Coluna = coluna;
         }
-
         public Posicao()
         {
 
         }
-
         public override string ToString()
         {
             return Linha
